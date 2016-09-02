@@ -6,7 +6,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Search/>
+        <Search
+          className="characterA"/>
         <Search/>
       </div>
     );
