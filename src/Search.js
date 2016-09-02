@@ -39,7 +39,7 @@ class Search extends Component {
     event.preventDefault();
     this.getServerData()
     .then(response => this.getCharacterInfo(response.data.results[0].id))
-    .then(character => this.setState(intelligence: character[0].intelligence));
+    .then(character => this.props.battle(character[0]));
   }
 
   render() {
@@ -54,7 +54,6 @@ class Search extends Component {
           name={this.state.name}
           id={this.state.id}
           image={this.state.image}/>
-        {this.state.intelligence}
       </div>
     )
   }
