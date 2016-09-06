@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 
 class Character extends Component {
-
   render() {
+    let imageElement;
+    if (this.props.image) {
+      imageElement = <img src={`${this.props.image}/portrait_incredible.jpg`} alt=""/>;
+    } else {
+      imageElement = null;
+    }
     return (
-      <div>
+      <div class="Character">
         <p>Name: {this.props.name}</p>
-        <img src={`${this.props.image}/portrait_incredible.jpg`} alt=""/>
+        {imageElement}
+
       </div>
       );
     }
